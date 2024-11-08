@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Portfolio(Projects)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="default.css" type="text/css" rel="stylesheet"/>
+<!--[if IE]>
+<link href="ie.css" type="text/css" rel="stylesheet"/>
+<![endif]-->
+<!--[if lte IE 6]>
+<style>.links ul li{margin:0;}</style>
+<![endif]-->
+</head>
+<body>
+  <div id="header">
+    <div id="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul>
+      <img src="images/logos.png" alt="logo"width="25" height="">
+      <li><a href="contact.html">contact</a></li>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="index.html#upperpage">about</a></li>
+      <li><a href="index.html">home</a></li>
+    </ul>
+
+  </div>
+<div id="cm">
+    <h1>My Projects<a id="top"></a></h1>
+</div>
+<div class="container">
+  <div class="projects">
+    <div class="project-cards">
+      <!-- Project card 1 -->
+      <div class="project" onclick="openModal('NameCard', 'images/project.png', 'I use principle of balance,emphasis and rhythm for the card.Principle of balance as the main information is sitting in the middle of the card,principle of emphasis shows the main logo in the middle of the card and rhythm shows the rows for each message on the card.')">
+        <img src="images/project.png" alt="Project" width="25">
+        <div class="project-info">
+          <h3>NameCard</h3>
+          <p>my namecard with the colour scheme of orange and yellow</p>
+        </div>
+      </div>
+
+      <!-- Project card 2 -->
+      <div class="project" onclick="openModal('VR Project',  'video/secret.mp4','VR escape room I created which consist of 1 normal exit and another secret excited')">
+        <video autoplay muted loop width="600">
+          <source src="video/normal.mp4" type="video/mp4" >
+          Your browser does not support the video tag.
+      </video>
+        <div class="project-info">
+          <h3>VR Project</h3>
+          <p>VR game I created</p>
+        </div>
+      </div>
+
+ <!-- Modal -->
+<div id="projectModal" class="modal">
+  <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+
+      <!-- Title at the top -->
+      <h3 id="modalTitle">Project Title</h3>
+
+      <!-- Image or Video will go here (below the title) -->
+      <div id="modalMedia">
+          <img id="modalImage" src="" alt="Project Image" style="display: none;">
+          <video id="modalVideo" controls style="display: none;">
+              <source id="modalVideoSource" type="video/mp4">
+          </video>
+      </div>
+
+      <!-- Description below the image/video -->
+      <p id="modalDescription">Project Description</p>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 id="modal-title"></h3>
+    <p id="modal-description"></p>
+    <a id="modal-link" href="" target="_blank" rel="noopener noreferrer">View Project</a>
+  </div>
+</div>
+<script src="script.js"></script>
+  <div id="footer">
+    <p>socials <span class="slash">//</span> 
+</span> linkedIn: <a href="https://www.linkedin.com/in/teo-xuhui-58174a304/">My Profile</a>
+<span class="slash">//</span> github: <a href="https://github.com/teoxuhui">My Profile</a></p>
+  </div>
+</body>
+<style>/* General styles for the app */
+ /* General styles for the app */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Project cards styles */
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Default: 2 columns */
+  gap: 2rem;
+}
+
+.project {
+  color:orangered;
+  background-color: gray;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project:hover {
+  transform: scale(1.05);
+}
+
+.project img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 1rem;
+}
+
+.project h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.project p {
+  font-size: 1.2rem;
+  color: orangered;
+}
+
+/* Modal styles */
+.modal {
+  color:white;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: orange;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.modal-content h3 {
+  font-size: 2rem;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+  .search-bar input {
+    width: 80%;
+  }
+  .project-cards {
+    grid-template-columns: 1fr; /* 1 column for smaller screens */
+  }
+}
+#modalMedia {
+  margin-top: 20px;
+}
+
+#modalImage {
+  width: 100%;
+  height: auto;
+}
+
+#modalVideo {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}#modalMedia {
+  margin-top: 20px;
+}
+
+#modalImage {
+  width: 100%;
+  height: auto;
+}
+
+#modalVideo {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .project-cards {
+    grid-template-columns: 1fr; /* 1 column for smaller screens */
+  }
+}
+  </style>
+ <script src="code.js"></script>
+</html>

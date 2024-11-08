@@ -1,0 +1,741 @@
+/* CSS Document */
+
+html{
+    background-color:#000;
+    scroll-behavior: smooth;
+    }
+
+    body{
+    margin:0; 
+    padding:0; 
+    border:0; 
+    height:100%; 
+    overflow-y:auto; 
+    font:.8em Arial, Open Sans, sans-serif;
+    color:#999;
+    text-align:center;
+    }
+    
+    #page {
+        margin: 0 auto; /* Center the container horizontally */
+        width: 85%; /* Slightly adjust width for central alignment */
+        max-width: 1200px;
+        padding: 20px; /* Add padding for spacing */
+        text-align: left;
+        box-sizing: border-box;
+    }
+    
+    #upper_page, #lower_page, #footer {
+        padding-left: 20px; /* Add left padding to align content within the main container */
+    }
+    
+    
+    #header {
+        position: fixed;
+        width: 100%; /* Full width of the viewport */
+        max-width: 1300px;
+        overflow: hidden;
+        background-color: rgba(51, 51, 51, 0.5);
+        color: orange;
+        text-align: center;
+        padding: 15px 0;
+        z-index: 10;
+    }
+    
+   /* Header navigation items */
+#header ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+#header ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+#header ul li a {
+    color: orangered;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+/* Default styles for large screens */
+#header h1 {
+    font-size: 70px;
+    line-height: 60px;
+}
+
+#header ul li {
+    margin: 0 20px;
+}
+
+/* Medium screens (tablets, small laptops) */
+@media (max-width: 992px) {
+    #header h1 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    #header ul li {
+        margin: 0 10px;
+    }
+}
+
+/* Small screens (landscape phones, small tablets) */
+@media (max-width: 768px) {
+    #header h1 {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    #header ul li {
+        display: block; /* Stack menu items vertically */
+        margin: 10px 0;
+    }
+}
+
+/* Extra small screens (portrait phones) */
+@media (max-width: 576px) {
+    #header h1 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    #header {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    #header ul {
+        padding: 0;
+    }
+
+    #header ul li {
+        font-size: 1em;
+        margin: 5px 0;
+    }
+}
+#header ul {
+    display: block; /* Hide menu */
+}
+
+#header.active ul {
+    display: block; /* Show menu when active */
+}
+/* Basic styling for larger screens */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #header nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 10px;
+  }
+  
+  #header nav ul li {
+    margin-left: 20px;
+  }
+  
+  #header nav ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Main form styling */
+  form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .textfield {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    #header nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    #header nav ul li {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+    form {
+      width: 90%;
+      margin: auto;
+    }
+  
+    .textfield, .submit {
+      width: 100%;
+      font-size: 1em;
+    }
+  
+    #footer {
+      text-align: center;
+      padding: 10px;
+    }
+  }
+  
+  /* Styling for very small screens */
+  @media (max-width: 480px) {
+    #header nav ul {
+      padding: 0;
+    }
+  
+    .textfield {
+      font-size: 0.9em;
+      padding: 8px;
+    }
+    
+    #footer p {
+      font-size: 0.8em;
+    }
+  }
+  
+/* Show menu toggle icon on small screens */
+#menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: orangered;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    #header ul {
+        display: none;
+    }
+    
+    #header.active ul {
+        display: block;
+    }
+}
+
+    
+    /* Video Styling */
+    #background-video {
+  
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -1; /* Ensures the video is behind content */
+    }
+    .text-overlay {
+        position: absolute; /* Position overlay to stay in place */
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Adjust for centering */
+        color: orangered; /* Text color */
+        font-size: 2em;
+        text-shadow: 2px 2px 4px white; /* Optional shadow for visibility */
+        z-index: 2; /* Higher than video, lower than header */
+        text-align: center;
+    }
+    /* Navigation and Text Styling */
+    .parallax-btn {
+        padding: 12px 24px;
+        font-size: 18px;
+        font-weight: bold;
+        color: orangered !important; /* Ensure the initial text color is orangered */
+        background-color: transparent; /* Hidden background */
+        border: 2px solid transparent; /* Hidden border */
+        border-radius: 8px;
+        cursor: pointer;
+        text-transform: uppercase;
+        outline: none;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease, color 0.3s ease; /* Smooth transition for all properties, including text color */
+        text-decoration: none;
+    }
+    
+    /* Show Background and Border on Hover */
+    .parallax-btn:hover {
+        color: #fff !important; /* Ensure text color changes to white on hover */
+        background-color: #ff6700; /* Bright orange background on hover */
+        border: 2px solid #ff4500; /* Darker orange border on hover */
+        transform: scale(1.1); /* Slight enlargement */
+        box-shadow: 0 0 12px rgba(255, 100, 0, 0.8), 0 0 24px rgba(255, 150, 0, 0.6); /* Glow effect */
+    }
+    
+    .parallax-btn:hover::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 167, 0, 0.6), rgba(255, 67, 0, 0));
+        animation: hypercharge-pulse 1.5s infinite ease-out;
+        z-index: -1;
+        filter: blur(10px); /* Smooth blurred glow */
+    }
+    
+    /* Pulse Animation */
+    @keyframes hypercharge-pulse {
+        0% {
+            transform: scale(1);
+            opacity: 0.7;
+        }
+        50% {
+            transform: scale(1.4);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1.6);
+            opacity: 0;
+        }
+    }
+    
+    /* Active State */
+    .parallax-btn:active {
+        transform: scale(1.05);
+        box-shadow: 0 0 6px rgba(255, 100, 0, 0.8);
+    }
+    submit.parallax-btn {
+        width: 100%; /* Ensure buttons fill their container width */
+        font-size: 1em;
+        padding: 10px;
+        margin-top: 10px;
+        /* If needed, remove any conflicting styles from the submit button */
+    }
+    
+        
+        /* BASIC STYLES */
+        
+        #upper_page p{
+        margin:10px 30px;
+        line-height:1.5em;
+        font-size:1.3em;
+        }
+        
+        #upper_page p:first-line{
+        font-weight:bold;
+        font-size:110%;
+        color:#EEE;
+        }
+        
+        #lower_page p{
+        margin:8px 0;
+        line-height:1.5em;
+        }
+        
+        #lower_right p{margin-right:-20px}
+        
+        #page a{text-decoration:none;font-weight:bold;color:#00ADF0}
+        #page h1 a,#page h4 a{font-weight:normal;}
+        
+        #page a:hover{color:#FFF;}
+        
+        #page b,#page i,#page em{color:#CCC;font-size:110%}
+        
+        h1,h2,h3,h4,h5,h6{font-family:"Arial Black";text-transform:uppercase;font-weight:normal;}
+        
+        #footer p{text-align:center;padding:20px 0 0 0;line-height:4em}
+        
+        #lower_page h1,#lower_page h2{
+        color:#999;
+        margin-bottom:-.7em;
+        color:#EEE;
+        }
+    
+    #lower_page{
+    clear:both;
+    float:left;
+    width:100%;
+    background:transparent;
+    }
+    
+    #lower_left{
+    float:left;
+    width:425px;
+    margin-left:30px;
+    }
+    
+    #lower_single{
+    float:left;
+    width:100%;
+    margin-left:30px;
+    }
+    
+    #lower_right{
+    float:left;
+    width:215px;
+    margin-left:30px;
+    }
+    
+    #footer{
+    margin:0;
+    padding:0;
+    }
+    
+    /* NAV MENU */
+    
+    #header h1{
+    margin:0 20px 0 0;
+    padding:0;
+    color:#999;
+    text-align:center;
+    float:right;
+    font-size:70px;
+    line-height:60px;
+    }
+    
+    #header ul{
+    margin:0;
+    padding:0;
+    height:30px;
+    list-style:none;
+    text-align:right;
+    font-size:1em;
+    width:100%;
+    }
+    
+    #header li{
+    float:right;
+    padding-right:10px;
+    }
+    
+    #header li a{
+    text-transform:uppercase;
+    font:1.2em "Arial Black";
+    color:#00ADF0;
+    }
+    
+    a:active,a:focus{outline:none}
+    
+    /* BASIC STYLES */
+    
+    #upper_page p{
+    margin:10px 30px;
+    line-height:1.5em;
+    font-size:1.3em;
+    }
+    
+    #upper_page p:first-line{
+    font-weight:bold;
+    font-size:110%;
+    color:#EEE;
+    }
+    
+    #lower_page p{
+    margin:8px 0;
+    line-height:1.5em;
+    }
+    
+    #lower_right p{margin-right:-20px}
+    
+ 
+    #page a{text-decoration:none;font-weight:bold;color:#00ADF0}
+    #page h1 a,#page h4 a{font-weight:normal;}
+    
+    #page a:hover{color:#FFF;}
+    
+    #page b,#page i,#page em{color:#CCC;font-size:110%}
+    
+    h1,h2,h3,h4,h5,h6{font-family:"Arial Black";text-transform:uppercase;font-weight:normal;}
+    
+    #footer p{text-align:center;padding:20px 0 0 0;line-height:4em}
+    
+    #lower_page h1,#lower_page h2{
+    color:#999;
+    margin-bottom:-.7em;
+    color:#EEE;
+    }
+    
+    /* BLOG STYLES */
+    
+    
+    #lower_left h2,#lower_single h2{
+    color:orange;
+    background:transparent;
+    padding-left:4px;
+    font-size:1.4em;
+    border-top:2px solid #555;
+    margin-bottom:0;
+    }
+    
+    #lower_left h2 a,
+    #lower_left h3 a,
+    #lower_left h4 a{font-weight:normal;}
+    #lower_left h3,
+    #lower_left h3 a{
+    color:#CCC;
+    background:transparent;
+    padding:0 0 4px 4px;
+    font-size:1em;
+    border-bottom:1px solid #333;
+    margin:0 0 -5px 0;
+    text-transform: none; 
+    }
+    
+    #lower_left h4,
+    #lower_left h4 a{
+    color:gray;
+    font-size:1em;
+    margin:-5px 0 30px 0;
+    text-transform: none; 
+    }
+    
+    #lower_left span.category{
+    font:.9em Arial, Helvetica, sans-serif;
+    text-transform:none;
+    }
+    
+    .slash{color:red}
+    
+    .post_summary ul{
+    list-style:none outside;
+    margin-left:-40px;
+    }
+    
+    .post_summary li{
+    margin:-1px 0 0 0;
+    border-bottom:1px solid #333;
+    font-size:1.1em;
+    }
+    
+    .post_summary ul li a{display:block;padding:5px 0 10px 0;margin-bottom:0}
+    
+    .ps_title{font:1.1em "Arial Black";color:orange;}
+    .ps_plain{font-size:.9em;color:#DDD;}
+    #lower_left .ps_title a{font-weight:normal;}
+    
+    
+    /* RIGHT-SIDE STYLES */
+    
+    .links ul{
+    list-style:none;
+    margin-left:-40px;
+    font-size:140%;
+    }
+    
+    .links ul li{
+    margin:-1px 0 0 0;
+    border-bottom:1px solid #333;
+    }
+    
+    .links ul li a{display:block;padding:7px 0 3px 0;}
+    
+    /* TO FIX WORDPRESS */
+    
+    #linkcat-1{list-style:none}
+    #linkcat-1 h2{display:none;}
+    
+    /* SINGLE STORY PAGE STYLES */
+    
+    #upper_page h1,#upper_page h3{
+    color:#00ADF0;
+    padding-left:30px;
+    }
+    
+    #lower_single h2.comments{
+    border:none;
+    background-color:transparent;
+    }
+    
+    #lower_single ul li{
+    width:90%;
+    list-style:none;
+    background:url(images/blag.jpg) top left no-repeat #000;
+    margin-left:-40px;
+    margin-bottom:20px;
+    padding:8px;
+    border:1px solid #222;
+    }
+    
+    #lower_single ul li span.comments{
+    font-family:"Arial Black";
+    text-transform:uppercase;
+    font-weight:normal;
+    margin-left:24px;
+    color:#CCC;
+    }
+    
+    #lower_single ul li a{font-weight:normal;}
+    
+    .commentdate{
+    color:#00ADF0;
+    font-size:.85em;
+    display:block;
+    text-align:right;
+    }
+    
+    #lower_single h3.comments{
+    border:none;
+    background-color:transparent;
+    margin-bottom:-10px;
+    color:#CCC;
+    }
+    
+    #lower_single .plain{
+    font-family:Arial, Helvetica, sans-serif;
+    text-transform:none;
+    color:#CCC;
+    }
+    
+    /* FORM STYLES */
+    
+    form fieldset{padding:0;margin:0;border:none;}
+    
+    .textfield{
+    margin-bottom:10px;
+    font:1.2em Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    color:#00ADF0;
+    padding:4px 8px;
+    background-color:#000;
+    border:1px solid #222;
+    }
+    
+    /* CONTACT PAGE */
+    
+   
+    
+    /* ARCHIVES */
+    
+    h1.pagetitle{color:#00ADF0;font-size:1.6em}
+    
+    #lower_right .sidebar ul li p:first-line{font-size:100%;font-weight:normal;color:#999}
+    .sidebar h3{color:#00ADF0}
+    
+    .sidebar ul{font-size:1.2em;}
+    
+    #lower_single .sr_title a{
+    font:1.4em "Arial Black";
+    font-weight:normal;
+    color:#00ADF0;
+    }
+    
+    #lower_single .sr_title a:hover{color:#FFF;}
+    
+    #lower_single .sr_date{
+    font:1.2em Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    color:#DDD;
+    }
+    #cm {
+        text-align: center; /* Center the container and content */
+        padding-top: 100px; /* Adjust padding as needed to space it from other elements */
+    }
+    
+    #cm h1 {
+        font-size: 3em; /* Adjust the font size to make it prominent */
+        color: orangered; /* Set the color to orangered */
+        text-transform: uppercase; /* Make the text uppercase */
+        font-weight: bold; /* Add weight for emphasis */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Add a slight shadow for depth */
+        margin: 0; /* Reset margin */
+        padding: 0;
+    }
+    
+    #cm a#top {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        visibility: hidden; /* Hide the anchor link but keep it functional for scrolling */
+    }
+    #upper_page {
+        max-width: 80 %; /* Smaller width to fit in the box */
+        margin: 0 auto; /* Center the content */
+        padding: 10px 0; /* Less padding for compactness */
+        box-sizing: border-box;
+    }
+    
+    #upper_page form {
+        max-width: 50%; /* Reduce width of form slightly */
+        margin: auto; /* Center form within container */
+    }
+    
+   
+    
+    /* Style for input fields */
+/* Apply styles to text inputs, email inputs, and textarea */
+#upper_page input[type="text"],
+#upper_page input[type="email"],
+#upper_page textarea {
+    width: 50%; /* Set width to 50% for all fields */
+    font-size: 1em;
+    padding: 6px; /* Compact padding */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+/* Style for buttons */
+#upper_page input[type="submit"],
+#upper_page input[type="reset"] {
+    width: 10%; /* Full width for buttons */
+    font-size: 0.9em;
+    padding: 6px;
+    margin: 5px 2%;
+}
+
+/* Responsive adjustments for screens smaller than 768px */
+@media (max-width: 768px) {
+    #upper_page input[type="text"],
+    #upper_page input[type="email"],
+    #upper_page textarea {
+        width: 50%; /* Full width for smaller screens */
+        font-size: 0.9em;
+        padding: 5px;
+    }
+
+    #upper_page input[type="submit"],
+    #upper_page input[type="reset"] {
+        width: 20%; /* Stack buttons vertically */
+        font-size: 0.9em;
+        padding: 6px;
+        margin: 5px 0;
+    }
+}
+
+/* Responsive adjustments for screens smaller than 480px */
+@media (max-width: 480px) {
+    #upper_page input[type="text"],
+    #upper_page input[type="email"],
+    #upper_page textarea {
+        width: 20%; /* Full width for smallest screens */
+        font-size: 0.8em; /* Smaller font size */
+        padding: 4px; /* Reduced padding */
+    }
+
+    #upper_page input[type="submit"],
+    #upper_page input[type="reset"] {
+        width: 30%; /* Full width for smallest screens */
+        font-size: 0.8em;
+        padding: 5px;
+        margin: 5px 0;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+      }
+      ul li {
+        margin-bottom: 10px;
+      }
+      ul li a {
+        color: black;
+        text-decoration: none;
+      }
+    
+      /* Modal background overlay */
+      /* Modal overlay */
+
+  /* Style for the list items */
+    }
